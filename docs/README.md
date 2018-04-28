@@ -6,7 +6,7 @@ alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
 # cyberdojo/starter-fat docker image
 
-- A docker-containerized micro-service for [cyber-dojo](http://k8s.cyber-dojo.org).
+- A docker-containerized micro-service for [k8s.cyber-dojo.org](http://k8s.cyber-dojo.org).
 - Holds the start-point files used when setting up a practice session.
 
 API:
