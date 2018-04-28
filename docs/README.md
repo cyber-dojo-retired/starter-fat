@@ -6,7 +6,7 @@ alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
 # cyberdojo/starter-fat docker image
 
-- A docker-containerized micro-service for [cyber-dojo](http://cyber-dojo.org).
+- A docker-containerized micro-service for [cyber-dojo](http://k8s.cyber-dojo.org).
 - Holds the start-point files used when setting up a practice session.
 
 API:
@@ -23,7 +23,7 @@ API:
   {}
 ```
 - returns two arrays; the language-test-framework display_names and the exercises names
-for the starter service's currently installed languages start-point, eg
+for the currently installed languages start-point, eg
 ```
   { "language_start_points": {
       "languages": [
@@ -149,8 +149,6 @@ Calls the starter-server's micro-service methods
 and displays their json results and how long they took.
 If the starter-client's IP address is 192.168.99.100 then put
 192.168.99.100:4598 into your browser to see the output.
-
-# demo screenshot
 
 - - - -
 
