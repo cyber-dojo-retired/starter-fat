@@ -24,5 +24,5 @@ docker-compose \
   up -d  \
   --force-recreate
 
-wait_till_up 'test_starter_fat_server'
-wait_till_up 'test_starter_fat_client'
+wait_till_up 'test-starter-fat-server'
+wait_till_up 'test-starter-fat-client'

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 readonly ROOT_DIR="$( cd "$( dirname "${0}" )" && cd .. && pwd )"
-readonly MY_NAME='starter'
+readonly MY_NAME='starter-fat'
 
-readonly SERVER_CID=`docker ps --all --quiet --filter "name=${MY_NAME}_fat_server"`
-readonly CLIENT_CID=`docker ps --all --quiet --filter "name=${MY_NAME}_fat_client"`
+readonly SERVER_CID=`docker ps --all --quiet --filter "name=${MY_NAME}-server"`
+readonly CLIENT_CID=`docker ps --all --quiet --filter "name=${MY_NAME}-client"`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 
