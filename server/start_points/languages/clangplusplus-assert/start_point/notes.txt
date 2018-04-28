@@ -1,0 +1,14 @@
+
+I cannot add this line to the makefile
+CXXFLAGS += -fsanitize=address
+
+I investigated this and to get that to work I
+had to alter the docker-container permissions
+as set in the docker-runner. Specifically
+
+o) I had to add this line to the docker run options
+      --cap-add=SYS_PTRACE
+
+o) I had to remove this line from the docker run options
+      --ulimit data=4*GB
+

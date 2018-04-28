@@ -1,0 +1,19 @@
+
+{
+  "display_name": "Erlang, eunit",
+
+  "visible_filenames": [
+    "hiker_tests.erl",
+    "hiker.erl",
+    "cyber-dojo.sh",
+    "Makefile"
+  ],
+
+  "image_name": "cyberdojofoundation/erlang_eunit",
+
+  "filename_extension": ".erl",
+
+  "tab_size": 2,
+
+  "runner_choice": "stateless"
+}

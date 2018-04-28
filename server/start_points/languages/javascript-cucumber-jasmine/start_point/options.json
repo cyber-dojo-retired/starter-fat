@@ -1,0 +1,15 @@
+{
+  "green":
+    {
+      "filename": "hiker.feature",
+      "from": "6 times 9",
+      "to": "6 times 7"
+    }
+  ,
+  "amber":
+    {
+      "filename": "hiker_steps.js",
+      "from": "const assert",
+      "to": "//const assert"
+    }
+}

@@ -1,0 +1,18 @@
+
+{
+  "display_name": "BCPL, all_tests_passed",
+
+  "visible_filenames": [
+     "hiker.test.b",
+     "hiker.b",
+     "cyber-dojo.sh"
+  ],
+
+  "image_name": "cyberdojofoundation/bcpl_all_tests_passed",
+
+  "filename_extension": ".b",
+
+  "tab_size": 4,
+
+  "runner_choice": "stateless"
+}

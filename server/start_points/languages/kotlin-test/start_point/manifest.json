@@ -1,0 +1,18 @@
+
+{
+  "display_name": "Kotlin, Kotlintest",
+
+  "visible_filenames": [
+    "HikerTest.kt",
+    "Hiker.kt",
+    "cyber-dojo.sh"
+  ],
+
+  "image_name": "cyberdojofoundation/kotlin_kotlintest",
+
+  "runner_choice": "stateless",
+
+  "max_seconds": 20,
+
+  "filename_extension": ".kt"
+}

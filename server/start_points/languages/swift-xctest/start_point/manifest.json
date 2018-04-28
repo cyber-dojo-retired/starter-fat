@@ -1,0 +1,16 @@
+{
+  "display_name": "Swift, XCTest",
+
+  "visible_filenames": [
+    "hikertests.swift",
+    "hiker.swift",
+    "main.swift",
+    "cyber-dojo.sh"
+  ],
+
+  "image_name": "cyberdojofoundation/swift_xctest",
+
+  "filename_extension": ".swift",
+
+  "runner_choice": "stateful"
+}

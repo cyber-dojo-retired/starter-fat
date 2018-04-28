@@ -1,0 +1,18 @@
+{
+  "display_name": "Javascript, assert",
+
+  "visible_filenames": [
+    "hikerTest.js",
+    "hiker.js",
+    "cyber-dojo.sh",
+    ".jshintrc"
+  ],
+
+  "image_name": "cyberdojofoundation/javascript-node_assert",
+
+  "filename_extension": ".js",
+
+  "tab_size": 2,
+
+  "runner_choice": "stateless"
+}

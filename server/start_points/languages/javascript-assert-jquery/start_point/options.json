@@ -1,0 +1,16 @@
+
+{
+  "green":
+    {
+      "filename":"hiker.html",
+      "from":"54",
+      "to":"42"
+    }
+  ,
+  "amber":
+    {
+      "filename":"hiker.js",
+      "from":"function",
+      "to":"fn"
+    }
+}

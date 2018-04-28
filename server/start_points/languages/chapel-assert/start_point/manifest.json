@@ -1,0 +1,19 @@
+{
+    "display_name": "Chapel, assert",
+
+    "visible_filenames": [
+        "hiker.chpl",
+        "hikerTest.chpl",
+        "cyber-dojo.sh"
+    ],
+
+    "image_name": "cyberdojofoundation/chapel_assert",
+
+    "filename_extension": ".chpl",
+
+    "tab_size": 2,
+
+    "runner_choice": "stateless",
+
+    "max_seconds": 20
+}

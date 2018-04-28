@@ -1,0 +1,15 @@
+sudo: required
+services: docker
+language: node_js
+
+script:
+    - curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-dojo
+    - chmod +x cyber-dojo
+    - my_url=https://github.com/cyber-dojo/start-points-custom.git
+    - ./cyber-dojo start-point create custom --git=${my_url}
+    - ./cyber-dojo start-point ls | grep custom
+
+    - npm install travis-ci
+    - script=trigger-build.js
+    - curl -O https://raw.githubusercontent.com/cyber-dojo/cyber-dojo/master/shared/${script}
+    - node ${script} cyber-dojo/web

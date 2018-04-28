@@ -1,0 +1,14 @@
+#-----Ignore everything
+
+*
+
+#-----!Except these dirs
+
+!src
+!start_points
+
+#-----!Except these files
+
+!Gemfile
+!config.ru
+!up.sh

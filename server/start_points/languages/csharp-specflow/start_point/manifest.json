@@ -1,0 +1,18 @@
+
+{
+  "display_name": "C#, SpecFlow",
+
+  "visible_filenames": [
+    "Hiker.cs",
+    "HikerSteps.cs",
+    "HikerSpec.feature",
+    "cyber-dojo.sh",
+    "specflow.json"
+  ],
+
+  "image_name": "cyberdojofoundation/csharp_specflow",
+
+  "filename_extension": [ ".cs", ".feature" ],
+
+  "runner_choice": "stateless"
+}

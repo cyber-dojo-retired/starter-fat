@@ -1,0 +1,18 @@
+
+{
+  "display_name": "Perl, Test::Simple",
+
+  "visible_filenames": [
+    "hiker.t",
+    "hiker.pl",
+    "cyber-dojo.sh"
+  ],
+
+  "image_name": "cyberdojofoundation/perl_test_simple",
+
+  "runner_choice": "stateless",
+
+  "filename_extension": [ ".pl", ".t" ],
+
+  "tab_size": 4
+}

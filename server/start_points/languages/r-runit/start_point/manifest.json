@@ -1,0 +1,15 @@
+{
+  "display_name": "R, RUnit",
+
+  "visible_filenames": [
+     "hiker.tests.R",
+     "hiker.R",
+     "cyber-dojo.sh"
+  ],
+
+  "image_name": "cyberdojofoundation/r_runit",
+
+  "filename_extension": ".R",
+
+  "runner_choice": "stateless"
+}
