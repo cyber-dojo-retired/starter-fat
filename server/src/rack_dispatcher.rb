@@ -13,8 +13,8 @@ class RackDispatcher
     name, args = validated_name_args(request)
     triple({ name => @starter.public_send(name, *args) })
   rescue => error
-    #puts "<#{error.message}>"
-    #puts error.backtrace
+    STDERR.puts "<#{error.message}>"
+    STDERR.puts error.backtrace.to_s
     triple({ 'exception' => error.message })
   end
 
