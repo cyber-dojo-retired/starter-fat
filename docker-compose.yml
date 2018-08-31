@@ -33,6 +33,7 @@ services:
     build:
       context: server
       args:
+        - CYBER_DOJO_START_POINTS_ROOT=${CYBER_DOJO_START_POINTS_ROOT}
         - CYBER_DOJO_HOME=${CYBER_DOJO_HOME}
         - PORT=${CYBER_DOJO_STARTER_SERVICE_PORT}
     user: nobody
