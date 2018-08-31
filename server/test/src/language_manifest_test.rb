@@ -74,6 +74,7 @@ class LanguageManifestTest < TestBase
   # - - - - - - - - - - - - - - - - - - - -
 
   test 'D7F', %w( valid with some optional properties ) do
+    skip "Skip for now"
     result = language_manifest('Python, unittest', 'Fizz_Buzz')
 
     manifest = result['manifest']

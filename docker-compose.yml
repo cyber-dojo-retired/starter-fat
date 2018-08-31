@@ -12,7 +12,7 @@ services:
     user: nobody
     image: cyberdojo/starter-client
     init: true
-    container_name: test-starter-client
+    container_name: test-starter-fat-client
     read_only: true
     tmpfs: /tmp
     depends_on:
@@ -38,7 +38,7 @@ services:
     user: nobody
     image: cyberdojo/starter-fat
     init: true
-    container_name: test-starter-server
+    container_name: test-starter-fat-server
     read_only: true
     tmpfs: /tmp
     restart: 'no'
@@ -48,5 +48,3 @@ services:
     volumes:
       - ./server/start_points:${CYBER_DOJO_START_POINTS_ROOT}:ro
       - ./server/test:${CYBER_DOJO_HOME}/test:ro
-
-
