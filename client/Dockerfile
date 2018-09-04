@@ -5,13 +5,10 @@ LABEL maintainer=jon@jaggersoft.com
 # setup client
 # - - - - - - - - - - - - - - -
 
-ARG CYBER_DOJO_HOME
-COPY . ${CYBER_DOJO_HOME}
-RUN  chown -R nobody:nogroup ${CYBER_DOJO_HOME}
+ARG                            STARTER_HOME=/app
+COPY .                       ${STARTER_HOME}
+RUN  chown -R nobody:nogroup ${STARTER_HOME}
 USER nobody
 
-ARG PORT
-EXPOSE ${PORT}
-ENV PORT=${PORT}
-
+EXPOSE 4528
 CMD [ "./up.sh" ]
