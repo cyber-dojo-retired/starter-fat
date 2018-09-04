@@ -6,7 +6,6 @@ services:
   starter_client:
     build:
       context: client
-    user: nobody
     image: cyberdojo/starter-client
     init: true
     container_name: test-starter-fat-client
@@ -23,7 +22,6 @@ services:
   starter:
     build:
       context: server
-    user: nobody
     image: cyberdojo/starter-fat
     init: true
     container_name: test-starter-fat-server
