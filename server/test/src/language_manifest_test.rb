@@ -74,13 +74,12 @@ class LanguageManifestTest < TestBase
   # - - - - - - - - - - - - - - - - - - - -
 
   test 'D7F', %w( valid with some optional properties ) do
-    skip "Skip for now"
     result = language_manifest('Python, unittest', 'Fizz_Buzz')
 
     manifest = result['manifest']
     expected_keys = %w(
       display_name image_name runner_choice visible_files
-      filename_extension highlight_filenames max_seconds progress_regexs tab_size
+      filename_extension progress_regexs tab_size
     )
     assert_equal expected_keys.sort, manifest.keys.sort
 
@@ -90,11 +89,9 @@ class LanguageManifestTest < TestBase
     expected_filenames = %w( cyber-dojo.sh hiker.py output test_hiker.py )
     assert_equal expected_filenames, manifest['visible_files'].keys.sort
 
-    assert_equal [ 'test_hiker.py' ], manifest['highlight_filenames']
     assert_equal '.py', manifest['filename_extension']
-    assert_equal 11, manifest['max_seconds']
     assert_equal [ 'FAILED \\(failures=\\d+\\)', 'OK' ], manifest['progress_regexs']
-    assert_equal 3, manifest['tab_size']
+    assert_equal 4, manifest['tab_size']
 
     instructions = result['exercise']
     assert instructions.start_with?('Write a program that prints')

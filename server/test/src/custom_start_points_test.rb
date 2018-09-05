@@ -10,15 +10,15 @@ class CustomStartPointsTest < TestBase
 
   test '9C1',
   %w( display-names are unique and sorted ) do
-    skip "Skip for now"
     start_points = custom_start_points
-    expected = [
+    [
       'Yahtzee refactoring, C# NUnit',
       'Yahtzee refactoring, C++ (g++) assert',
       'Yahtzee refactoring, Java JUnit',
       'Yahtzee refactoring, Python unitttest'
-    ]
-    assert_equal expected, start_points
+    ].each do |expected|
+      assert start_points.include?(expected), expected
+    end
   end
 
 end
