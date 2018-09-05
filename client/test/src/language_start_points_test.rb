@@ -10,31 +10,31 @@ class LanguageStartPointsTest < TestBase
 
   test '0F4',
   %w( languages ) do
-    skip "Skip for now"
     start_points = language_start_points
-    expected = [
+    [
       'C (gcc), assert',
       'C#, NUnit',
       'C++ (g++), assert',
       'Python, py.test',
       'Python, unittest'
-    ]
-    assert_equal expected, start_points['languages']
+    ].each do |expected|
+      assert start_points['languages'].include?(expected), expected
+    end
   end
 
   # - - - - - - - - - - - - - - - - - - - -
 
   test '0F5',
   %w( exercise-names ) do
-    skip "Skip for now"
     start_points = language_start_points
-    expected = [
+    [
       'Bowling_Game',
       'Fizz_Buzz',
       'Leap_Years',
       'Tiny_Maze'
-    ]
-    assert_equal expected, start_points['exercises'].keys.sort
+    ].each do |expected|
+      assert start_points['exercises'].include?(expected), expected
+    end
   end
 
   # - - - - - - - - - - - - - - - - - - - -
