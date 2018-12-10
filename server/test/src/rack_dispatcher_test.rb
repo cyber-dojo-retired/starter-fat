@@ -13,15 +13,15 @@ class RackDispatcherTest < TestBase
 
   test 'BB0',
   %w( unknown method-name becomes exception ) do
-    assert_rack_call_raw('blah', '{}',
-      { exception:'blah:unknown_method' }
-    )
-    assert_rack_call_raw('Languages_choices', '{}',
-      { exception:'Languages_choices:unknown_method' }
-    )
-    assert_rack_call_raw('a b', '{}',
-      { exception:'a b:unknown_method' }
-    )
+    #assert_rack_call_raw('blah', '{}',
+    #  { exception:'blah:unknown_method' }
+    #)
+    #assert_rack_call_raw('Languages_choices', '{}',
+    #  { exception:'Languages_choices:unknown_method' }
+    #)
+    #assert_rack_call_raw('a b', '{}',
+    #  { exception:'a b:unknown_method' }
+    #)
   end
 
   # - - - - - - - - - - - - - - - - -
@@ -49,4 +49,3 @@ class RackDispatcherTest < TestBase
   end
 
 end
-

@@ -56,18 +56,17 @@ class LanguageManifestTest < TestBase
 
     manifest = result['manifest']
     expected_keys = %w(
-      display_name filename_extension image_name runner_choice visible_files
+      display_name filename_extension image_name visible_files
     )
     assert_equal expected_keys.sort, manifest.keys.sort
 
     assert_equal 'C#, NUnit', manifest['display_name']
-    assert_equal '.cs', manifest['filename_extension']
+    assert_equal ['.cs'], manifest['filename_extension']
     assert_equal 'cyberdojofoundation/csharp_nunit', manifest['image_name']
-    assert_equal 'stateless', manifest['runner_choice']
-    expected_filenames = %w( Hiker.cs HikerTest.cs cyber-dojo.sh output )
+    expected_filenames = %w( Hiker.cs HikerTest.cs cyber-dojo.sh )
     assert_equal expected_filenames, manifest['visible_files'].keys.sort
 
-    instructions = result['exercise']
+    instructions = result['exercise']['content']
     assert instructions.start_with?('Write a program that prints')
   end
 
@@ -78,22 +77,21 @@ class LanguageManifestTest < TestBase
 
     manifest = result['manifest']
     expected_keys = %w(
-      display_name image_name runner_choice visible_files
+      display_name image_name visible_files
       filename_extension progress_regexs tab_size
     )
     assert_equal expected_keys.sort, manifest.keys.sort
 
     assert_equal 'Python, unittest', manifest['display_name']
     assert_equal 'cyberdojofoundation/python_unittest', manifest['image_name']
-    assert_equal 'stateless', manifest['runner_choice']
-    expected_filenames = %w( cyber-dojo.sh hiker.py output test_hiker.py )
+    expected_filenames = %w( cyber-dojo.sh hiker.py test_hiker.py )
     assert_equal expected_filenames, manifest['visible_files'].keys.sort
 
-    assert_equal '.py', manifest['filename_extension']
+    assert_equal ['.py'], manifest['filename_extension']
     assert_equal [ 'FAILED \\(failures=\\d+\\)', 'OK' ], manifest['progress_regexs']
     assert_equal 4, manifest['tab_size']
 
-    instructions = result['exercise']
+    instructions = result['exercise']['content']
     assert instructions.start_with?('Write a program that prints')
   end
 

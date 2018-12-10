@@ -17,6 +17,12 @@ class Starter
   end
 
   # - - - - - - - - - - - - - - - - -
+
+  def sha
+    IO.read('/app/sha.txt').strip
+  end
+
+  # - - - - - - - - - - - - - - - - -
   # setting up a cyber-dojo: language,testFramwork + exercise
   # - - - - - - - - - - - - - - - - -
 
@@ -51,19 +57,13 @@ class Starter
 
   private # = = = = = = = = = = = = =
 
-  def method_missing(name, *_args, &_block)
-    raise RuntimeError.new("#{name}:unknown_method")
-  end
-
-  # - - - - - - - - - - - - - - - - -
-
   attr_reader :cache
 
   def display_names(sub_dir)
     display_names = []
     pattern = "#{start_points_dir}/#{sub_dir}/**/manifest.json"
     Dir.glob(pattern).each do |filename|
-      json = JSON.parse(IO.read(filename))
+      json = JSON.parse!(IO.read(filename))
       display_names << json['display_name']
     end
     display_names.sort
@@ -73,16 +73,24 @@ class Starter
     manifests = {}
     pattern = "#{start_points_dir}/#{sub_dir}/**/manifest.json"
     Dir.glob(pattern).each do |manifest_filename|
-      manifest = JSON.parse(IO.read(manifest_filename))
+      manifest = JSON.parse!(IO.read(manifest_filename))
       display_name = manifest['display_name']
       visible_filenames = manifest['visible_filenames']
       dir = File.dirname(manifest_filename)
       manifest['visible_files'] =
-        Hash[visible_filenames.collect { |filename|
-          [filename, IO.read("#{dir}/#{filename}")]
+        Hash[visible_filenames.map { |filename|
+          [ filename,
+            {
+              'content' => IO.read("#{dir}/#{filename}")
+            }
+          ]
         }]
-      manifest['visible_files']['output'] = ''
       manifest.delete('visible_filenames')
+      manifest.delete('runner_choice')
+      fe = manifest['filename_extension']
+      if fe.is_a?(String)
+        manifest['filename_extension'] = [ fe ]
+      end
       manifests[display_name] = manifest
     end
     manifests
@@ -96,7 +104,9 @@ class Starter
     Dir.glob(pattern).each do |filename|
       # eg /app/start_points/exercises/Bowling_Game/instructions
       name = filename.split('/')[-2] # eg Bowling_Game
-      result[name] = IO.read(filename)
+      result[name] = {
+        'content' => IO.read(filename)
+      }
     end
     result
   end
