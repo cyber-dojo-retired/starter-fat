@@ -13,8 +13,8 @@ jobs:
           name: build starter-fat docker image and push image to docker hub
           command: |
             set -o errexit
+            ./build_image.sh
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            ./pipe_build_up_test.sh
             docker tag cyberdojo/starter-fat:latest cyberdojo/starter-fat:${CIRCLE_SHA1:0:7}
             docker tag cyberdojo/starter-fat:latest cyberdojo/starter-fat:beta
             docker push cyberdojo/starter-fat:${CIRCLE_SHA1:0:7}

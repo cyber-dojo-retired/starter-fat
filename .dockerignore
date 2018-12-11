@@ -1,0 +1,7 @@
+#-----Ignore everything
+
+*
+
+#-----!Except this dir
+
+!start_points

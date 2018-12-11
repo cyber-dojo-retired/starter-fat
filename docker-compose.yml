@@ -3,30 +3,7 @@ version: '2.2'
 
 services:
 
-  starter_client:
-    build:
-      context: client
-    image: cyberdojo/starter-client
-    init: true
-    container_name: test-starter-fat-client
-    read_only: true
-    tmpfs: /tmp
-    depends_on:
-      - starter
-    restart: 'no'
-    ports:
-      - 4528:4528
-
-  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
   starter:
     build:
-      context: server
+      context: .
     image: cyberdojo/starter-fat
-    init: true
-    container_name: test-starter-fat-server
-    read_only: true
-    tmpfs: /tmp
-    restart: 'no'
-    volumes:
-      - ./server/start_points:/app/start_points:ro
