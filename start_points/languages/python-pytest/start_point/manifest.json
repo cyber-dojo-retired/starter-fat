@@ -5,11 +5,16 @@
     "cyber-dojo.sh"
   ],
 
+  "hidden_filenames": [
+    "\\.pytest_cache/.*",
+    "\\.coverage"
+  ],
+
   "filename_extension": ".py",
 
   "tab_size": 4,
 
-  "display_name": "Python, py.test",
+  "display_name": "Python, pytest",
 
   "image_name": "cyberdojofoundation/python_pytest",
 
