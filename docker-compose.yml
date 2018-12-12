@@ -3,7 +3,9 @@ version: '2.2'
 
 services:
 
-  starter:
+  starter-fat:
     build:
       context: .
+      args:
+        - SHA
     image: cyberdojo/starter-fat
