@@ -14,7 +14,6 @@ jobs:
           command: |
             set -o errexit
             ./pipe_build_up_test.sh
-            docker image ls | grep cyber
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker tag  cyberdojo/starter-fat:latest cyberdojo/starter-fat:${CIRCLE_SHA1:0:7}
             docker tag  cyberdojo/starter-fat:latest cyberdojo/starter-fat:beta
